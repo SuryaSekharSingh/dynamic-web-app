@@ -11,13 +11,10 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 const MONGO_URI =
-  "mongodb+srv://surya01:surya123@cluster0.ttizluy.mongodb.net/testdb?retryWrites=true&w=majority";
+  "mongodb+srv://surya01:surya123@cluster0.ttizluy.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
