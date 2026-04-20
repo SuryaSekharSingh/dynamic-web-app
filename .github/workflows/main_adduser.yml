@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - adduser
+name: Build and deploy Node.js app to Azure Web App - addUser
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x'
+          node-version: '22.x'
 
       - name: npm install, build, and test
         run: |
@@ -51,15 +51,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_12BC6EE659774D3E82A0B8C7019CED49 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3E0521D4E43D41E0976CE06A0292E0E8 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6EC5D11841B54EF79ADDB7912BC2130E }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D6EE490C7F2444438BEED3BD2099C8A4 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_74BC64298747483FAE2747B741F23CF4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C2E21391439C4A418D127D9F3786F521 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'adduser'
+          app-name: 'addUser'
           slot-name: 'Production'
           package: .
           
